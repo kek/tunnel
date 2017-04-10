@@ -1,0 +1,7 @@
+#!/bin/bash
+$* &
+last_pid=$!
+while read line ; do
+  :
+done < /dev/stdin
+kill -KILL $last_pid

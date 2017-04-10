@@ -12,6 +12,7 @@ defmodule Tunnel do
       supervisor(Tunnel.Endpoint, []),
       # Start your own worker by calling: Tunnel.Worker.start_link(arg1, arg2, arg3)
       # worker(Tunnel.Worker, [arg1, arg2, arg3]),
+      worker(Tunnel.Executable, ["./bin/wrap node ./node_modules/wstunnel/bin/wstt.js -s 0.0.0.0:8080"], id: :wstunnel)
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
